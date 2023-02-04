@@ -78,7 +78,6 @@ final class ExceptionTest extends TestCase
         InputWidget::widget([new TestForm(), 'noExist']);
     }
 
-
     /**
      * @throws CircularReferenceException
      * @throws InvalidConfigException
