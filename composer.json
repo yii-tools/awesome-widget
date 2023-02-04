@@ -1,30 +1,37 @@
 {
-    "name": "yii-tools/template",
+    "name": "yii-tools/awesome-widget",
     "type": "library",
-    "description": "_____",
+    "description": "Foundation classes and components used by Yiitools Awesome Widget.",
     "keywords": [
-        "_____"
+        "yii-tools",
+        "awesome-widget",
+        "yii3"
     ],
     "license": "mit",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^8.1"
+        "php": "^8.1",
+        "yii-tools/form-model": "^1.0@dev",
+        "yii-tools/html": "^1.0@dev",
+        "yiisoft/widget": "^2.0"
     },
     "require-dev": {
         "maglnet/composer-require-checker": "^4.3",
         "phpunit/phpunit": "^9.5",
         "roave/infection-static-analysis-plugin": "^1.28",
-        "vimeo/psalm": "^5.6"
+        "vimeo/psalm": "^5.6",
+        "yii-tools/support": "^1.0@dev",
+        "yiisoft/test-support": "^3.0"
     },
     "autoload": {
         "psr-4": {
-            "Template\\": "src"
+            "Yii\\Widget\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Template\\Tests\\": "tests"
+            "Yii\\Widget\\Tests\\": "tests"
         }
     },
     "extra": {
