@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yii\Widget\Input\Concern;
+namespace Yii\Widget\Attribute;
 
 /**
  * CanBeReadonly is used by elements that support the readonly attribute.

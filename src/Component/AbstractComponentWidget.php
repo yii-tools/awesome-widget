@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Yii\Widget\Component;
 
+use Yii\Widget\Attribute;
 use Yiisoft\Widget\Widget;
 
 /**
@@ -11,10 +12,10 @@ use Yiisoft\Widget\Widget;
  */
 abstract class AbstractComponentWidget extends Widget
 {
-    use Concern\HasAttributes;
-    use Concern\HasClass;
-    use Concern\HasId;
-    use Concern\HasName;
+    use Attribute\HasAttributes;
+    use Attribute\HasClass;
+    use Attribute\HasId;
+    use Attribute\HasName;
 
     protected array $attributes = [];
 

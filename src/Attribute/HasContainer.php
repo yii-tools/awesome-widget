@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yii\Widget\Input\Concern;
+namespace Yii\Widget\Attribute;
 
 use Yii\Html\Helper\CssClass;
 

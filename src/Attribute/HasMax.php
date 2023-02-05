@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yii\Widget\Input\Concern;
+namespace Yii\Widget\Attribute;
 
 /**
  * HasMax is used by elements that have a max attribute such as input.
