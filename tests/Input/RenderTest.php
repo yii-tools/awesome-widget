@@ -397,4 +397,31 @@ final class RenderTest extends TestCase
             )->render(),
         );
     }
+
+    /**
+     * @throws CircularReferenceException
+     * @throws InvalidConfigException
+     * @throws NotFoundException
+     * @throws NotInstantiableException
+     */
+    public function testWrap(): void
+    {
+        Assert::equalsWithoutLE(
+            <<<HTML
+            <div>
+            <input id="testform-string" name="TestForm[string]" type="text" wrap="hard">
+            </div>
+            HTML,
+            InputWidget::widget([new TestForm(), 'string'])->wrap('hard')->render(),
+        );
+
+        Assert::equalsWithoutLE(
+            <<<HTML
+            <div>
+            <input id="testform-string" name="TestForm[string]" type="text" wrap="soft">
+            </div>
+            HTML,
+            InputWidget::widget([new TestForm(), 'string'])->wrap('soft')->render(),
+        );
+    }
 }

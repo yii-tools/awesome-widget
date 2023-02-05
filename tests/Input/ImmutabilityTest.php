@@ -24,6 +24,7 @@ final class ImmutabilityTest extends TestCase
         $this->assertNotSame($inputWidget, $inputWidget->ariaLabel(''));
         $this->assertNotSame($inputWidget, $inputWidget->autocomplete('on'));
         $this->assertNotSame($inputWidget, $inputWidget->charset(''));
+        $this->assertNotSame($inputWidget, $inputWidget->cols(0));
         $this->assertNotSame($inputWidget, $inputWidget->container(true));
         $this->assertNotSame($inputWidget, $inputWidget->containerAttributes([]));
         $this->assertNotSame($inputWidget, $inputWidget->containerClass(''));
@@ -39,9 +40,11 @@ final class ImmutabilityTest extends TestCase
         $this->assertNotSame($inputWidget, $inputWidget->prefix(''));
         $this->assertNotSame($inputWidget, $inputWidget->readonly());
         $this->assertNotSame($inputWidget, $inputWidget->required());
+        $this->assertNotSame($inputWidget, $inputWidget->rows(0));
         $this->assertNotSame($inputWidget, $inputWidget->size(0));
         $this->assertNotSame($inputWidget, $inputWidget->step(0));
         $this->assertNotSame($inputWidget, $inputWidget->suffix(''));
         $this->assertNotSame($inputWidget, $inputWidget->type(''));
+        $this->assertNotSame($inputWidget, $inputWidget->wrap('soft'));
     }
 }

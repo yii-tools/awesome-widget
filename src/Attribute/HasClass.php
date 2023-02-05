@@ -7,7 +7,7 @@ namespace Yii\Widget\Attribute;
 use Yii\Html\Helper\CssClass;
 
 /**
- * HasClass is used to add the class attribute to an element.
+ * HasClass is used by widgets which have a class attribute.
  */
 trait HasClass
 {

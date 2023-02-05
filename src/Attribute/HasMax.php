@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * HasMax is used by elements that have a max attribute such as input.
+ * HasMax is used by widgets which have a max attribute.
  */
 trait HasMax
 {

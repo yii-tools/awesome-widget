@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * HasSize is used by elements that have a size attribute.
+ * HasSize is used by widgets which have a size attribute.
  */
 trait HasSize
 {

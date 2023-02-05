@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * CanBeRequired is used by elements that can have a required attribute specifying that the element is required.
+ * CanBeRequired is used by widgets which can be required.
  */
 trait CanBeRequired
 {

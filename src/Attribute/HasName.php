@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * HasName is used to set the name of the element.
+ * HasName is used by widgets which have a name attribute.
  */
 trait HasName
 {

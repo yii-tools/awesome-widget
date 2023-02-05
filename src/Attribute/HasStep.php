@@ -7,7 +7,7 @@ namespace Yii\Widget\Attribute;
 use InvalidArgumentException;
 
 /**
- * HasStep is used by elements that have a step attribute.
+ * HasStep is used by widgets which have a step attribute.
  */
 trait HasStep
 {

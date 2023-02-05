@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * HasId is used to set the id attribute value of an element.
+ * HasId is used by widgets which have a id attribute.
  */
 trait HasId
 {

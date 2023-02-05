@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * HasPattern is used to set the pattern attribute value for an element.
+ * HasPattern is used by widgets which have a pattern attribute.
  */
 trait HasPattern
 {

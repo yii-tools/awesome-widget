@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * HasPlaceholder is used by elements that have a placeholder attribute such as input.
+ * HasPlaceholder is used by widgets which have a placeholder attribute.
  */
 trait HasPlaceholder
 {

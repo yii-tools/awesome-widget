@@ -7,7 +7,7 @@ namespace Yii\Widget\Attribute;
 use InvalidArgumentException;
 
 /**
- * HasAutocomplete is used by elements that have an autocomplete attribute.
+ * HasAutocomplete is used by widgets which have a autocomplete attribute.
  */
 trait HasAutocomplete
 {
