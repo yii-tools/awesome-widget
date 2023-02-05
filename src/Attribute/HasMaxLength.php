@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * HasMaxLength is used to set the maxlength attribute of an element.
+ * HasMaxLength is used by widgets which have a maxlength attribute.
  */
 trait HasMaxLength
 {

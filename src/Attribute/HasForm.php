@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * HasForm is used by elements that can be associated with a form element.
+ * HasForm is used by widgets which have a form attribute.
  */
 trait HasForm
 {

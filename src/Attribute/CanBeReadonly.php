@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * CanBeReadonly is used by elements that support the readonly attribute.
+ * CanBeReadonly is used by widgets which can have a readonly attribute.
  */
 trait CanBeReadonly
 {

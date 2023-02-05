@@ -7,7 +7,7 @@ namespace Yii\Widget\Attribute;
 use function array_merge;
 
 /**
- * HasAttributes is used by elements that have an attributes attribute.
+ * HasAttributes is used by widgets which have a attributes attribute.
  *
  * @link https://www.w3.org/TR/html52/dom.html#global-attributes
  * @link https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes

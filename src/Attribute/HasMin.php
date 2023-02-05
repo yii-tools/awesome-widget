@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * HasMin for the min attribute of the input tag.
+ * HasMin is used by widgets which have a min attribute.
  */
 trait HasMin
 {

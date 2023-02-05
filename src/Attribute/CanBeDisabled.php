@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * CanBeDisabled is used to set the disabled attribute of an element.
+ * CanBeDisabled is used by widgets which can be disabled.
  */
 trait CanBeDisabled
 {

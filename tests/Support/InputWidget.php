@@ -11,6 +11,7 @@ use Yii\Widget\Attribute;
 final class InputWidget extends AbstractInputWidget
 {
     use Attribute\HasAutocomplete;
+    use Attribute\HasCols;
     use Attribute\HasContainer;
     use Attribute\HasDirname;
     use Attribute\HasMax;
@@ -19,9 +20,11 @@ final class InputWidget extends AbstractInputWidget
     use Attribute\HasMinLength;
     use Attribute\HasPattern;
     use Attribute\HasPlaceholder;
+    use Attribute\HasRows;
     use Attribute\HasSize;
     use Attribute\HasStep;
     use Attribute\HasType;
+    use Attribute\HasWrap;
 
     public function render(): string
     {

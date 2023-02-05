@@ -7,7 +7,7 @@ namespace Yii\Widget\Attribute;
 use InvalidArgumentException;
 
 /**
- * HasDirname is used to set the name of the field that contains the directionality of the element.
+ * HasDirname is used by widgets which have a dirname attribute.
  */
 trait HasDirname
 {

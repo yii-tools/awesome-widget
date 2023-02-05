@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * HasAriaDescribedBy is used by elements that have an aria-describedby attribute.
+ * HasAriaDescribedBy is used by widgets which have a aria-describedby attribute.
  */
 trait HasAriaDescribedBy
 {

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Attribute;
 
 /**
- * HasType is used to set the type of the button, 'button', 'submit', 'reset'.
+ * HasType is used by widgets which have a type attribute.
  */
 trait HasType
 {
