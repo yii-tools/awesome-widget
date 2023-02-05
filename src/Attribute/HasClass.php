@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yii\Widget\Component\Concern;
+namespace Yii\Widget\Attribute;
 
 use Yii\Html\Helper\CssClass;
 

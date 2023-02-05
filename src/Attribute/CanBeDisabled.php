@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yii\Widget\Input\Concern;
+namespace Yii\Widget\Attribute;
 
 /**
  * CanBeDisabled is used to set the disabled attribute of an element.

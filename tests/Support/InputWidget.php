@@ -6,22 +6,22 @@ namespace Yii\Widget\Tests\Support;
 
 use Yii\Html\Tag;
 use Yii\Widget\Input\AbstractInputWidget;
-use Yii\Widget\Input\Concern;
+use Yii\Widget\Attribute;
 
 final class InputWidget extends AbstractInputWidget
 {
-    use Concern\HasAutocomplete;
-    use Concern\HasContainer;
-    use Concern\HasDirname;
-    use Concern\HasMax;
-    use Concern\HasMaxLength;
-    use Concern\HasMin;
-    use Concern\HasMinLength;
-    use Concern\HasPattern;
-    use Concern\HasPlaceholder;
-    use Concern\HasSize;
-    use Concern\HasStep;
-    use Concern\HasType;
+    use Attribute\HasAutocomplete;
+    use Attribute\HasContainer;
+    use Attribute\HasDirname;
+    use Attribute\HasMax;
+    use Attribute\HasMaxLength;
+    use Attribute\HasMin;
+    use Attribute\HasMinLength;
+    use Attribute\HasPattern;
+    use Attribute\HasPlaceholder;
+    use Attribute\HasSize;
+    use Attribute\HasStep;
+    use Attribute\HasType;
 
     public function render(): string
     {

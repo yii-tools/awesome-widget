@@ -7,6 +7,7 @@ namespace Yii\Widget\Input;
 use Yii\FormModel\FormModelInterface;
 use Yii\Html\Helper\Utils;
 use Yii\Html\Tag;
+use Yii\Widget\Attribute;
 use Yii\Widget\Component\AbstractComponentWidget;
 use Yii\Widget\Exception\AttributeNotSet;
 
@@ -17,13 +18,13 @@ use Yii\Widget\Exception\AttributeNotSet;
  */
 abstract class AbstractInputWidget extends AbstractComponentWidget
 {
-    use Concern\CanBeDisabled;
-    use Concern\CanBeReadonly;
-    use Concern\CanBeRequired;
-    use Concern\HasAriaDescribedBy;
-    use Concern\HasAriaLabel;
-    use Concern\HasForm;
-    use Concern\HasPrefixAndSuffix;
+    use Attribute\CanBeDisabled;
+    use Attribute\CanBeReadonly;
+    use Attribute\CanBeRequired;
+    use Attribute\HasAriaDescribedBy;
+    use Attribute\HasAriaLabel;
+    use Attribute\HasForm;
+    use Attribute\HasPrefixAndSuffix;
 
     private string $charset = 'UTF-8';
     private string $template = '{prefix}{input}{suffix}';
