@@ -28,6 +28,24 @@ final class RenderTest extends TestCase
      * @throws NotFoundException
      * @throws NotInstantiableException
      */
+    public function testAccept(): void
+    {
+        Assert::equalsWithoutLE(
+            <<<HTML
+            <div>
+            <input id="testform-string" name="TestForm[string]" type="text" accept="image/*">
+            </div>
+            HTML,
+            InputWidget::widget([new TestForm(), 'string'])->accept('image/*')->render(),
+        );
+    }
+
+    /**
+     * @throws CircularReferenceException
+     * @throws InvalidConfigException
+     * @throws NotFoundException
+     * @throws NotInstantiableException
+     */
     public function testAutoFocus(): void
     {
         Assert::equalsWithoutLE(
@@ -250,6 +268,24 @@ final class RenderTest extends TestCase
         $formModel->error()->add('string', 'Error for string.');
 
         $this->assertTrue($inputWidget->hasError());
+    }
+
+    /**
+     * @throws CircularReferenceException
+     * @throws InvalidConfigException
+     * @throws NotFoundException
+     * @throws NotInstantiableException
+     */
+    public function testMultiple(): void
+    {
+        Assert::equalsWithoutLE(
+            <<<HTML
+            <div>
+            <input id="testform-array" name="TestForm[array]" type="text" multiple placeholder="array">
+            </div>
+            HTML,
+            InputWidget::widget([new TestForm(), 'array'])->multiple()->render(),
+        );
     }
 
     /**
