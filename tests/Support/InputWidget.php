@@ -10,6 +10,8 @@ use Yii\Widget\Attribute;
 
 final class InputWidget extends AbstractInputWidget
 {
+    use Attribute\CanBeMultiple;
+    use Attribute\HasAccept;
     use Attribute\HasAutocomplete;
     use Attribute\HasCols;
     use Attribute\HasContainer;

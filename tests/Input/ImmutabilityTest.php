@@ -20,6 +20,7 @@ final class ImmutabilityTest extends TestCase
     {
         $inputWidget = InputWidget::widget([new TestForm(), 'string']);
 
+        $this->assertNotSame($inputWidget, $inputWidget->accept(''));
         $this->assertNotSame($inputWidget, $inputWidget->ariaDescribedBy(''));
         $this->assertNotSame($inputWidget, $inputWidget->ariaLabel(''));
         $this->assertNotSame($inputWidget, $inputWidget->autocomplete('on'));
@@ -35,6 +36,7 @@ final class ImmutabilityTest extends TestCase
         $this->assertNotSame($inputWidget, $inputWidget->maxLength(0));
         $this->assertNotSame($inputWidget, $inputWidget->min(''));
         $this->assertNotSame($inputWidget, $inputWidget->minLength(0));
+        $this->assertNotSame($inputWidget, $inputWidget->multiple());
         $this->assertNotSame($inputWidget, $inputWidget->pattern(''));
         $this->assertNotSame($inputWidget, $inputWidget->placeholder(''));
         $this->assertNotSame($inputWidget, $inputWidget->prefix(''));
