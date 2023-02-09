@@ -11,6 +11,8 @@ use Yii\Widget\Attribute;
 use Yii\Widget\Component\AbstractComponentWidget;
 use Yii\Widget\Exception\AttributeNotSet;
 
+use function implode;
+
 /**
  * AbstractInputWidget is the base class for widgets that collect user input.
  *
@@ -58,7 +60,15 @@ abstract class AbstractInputWidget extends AbstractComponentWidget
     }
 
     /**
-     * @return string The error message for the attribute.
+     * @return string The errors messages for the attribute.
+     */
+    public function getErrorsForAttribute(): string
+    {
+        return implode("\n", $this->formModel->getError($this->attribute));
+    }
+
+    /**
+     * @return string The firts error message for the attribute.
      */
     public function getErrorFirstForAttribute(): string
     {
