@@ -159,6 +159,30 @@ final class RenderTest extends TestCase
      * @throws NotFoundException
      * @throws NotInstantiableException
      */
+    public function testGetErrorsForAttribute(): void
+    {
+        $inputWidget = InputWidget::widget([new TestForm(), 'string']);
+
+        /** @var TestForm $formModel */
+        $formModel = $inputWidget->getFormModel();
+        $formModel->error()->add('string', 'String its required.');
+        $formModel->error()->add('string', 'Error for string.');
+
+        Assert::equalsWithoutLE(
+            <<<TEXT
+            String its required.
+            Error for string.
+            TEXT,
+            $inputWidget->getErrorsForAttribute(),
+        );
+    }
+
+    /**
+     * @throws CircularReferenceException
+     * @throws InvalidConfigException
+     * @throws NotFoundException
+     * @throws NotInstantiableException
+     */
     public function testGetErrorFirstForAttribute(): void
     {
         $inputWidget = InputWidget::widget([new TestForm(), 'string']);
