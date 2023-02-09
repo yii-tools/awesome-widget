@@ -169,10 +169,9 @@ final class RenderTest extends TestCase
         $formModel->error()->add('string', 'Error for string.');
 
         Assert::equalsWithoutLE(
-            <<<TEXT
-            String its required.
-            Error for string.
-            TEXT,
+            <<<HTML
+            String its required.<br>Error for string.
+            HTML,
             $inputWidget->getErrorsForAttribute(),
         );
     }
