@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 use Stringable;
 use Yii\Support\Assert;
 use Yii\Widget\Tests\Support\InputWidget;
-use Yii\Widget\Tests\Support\RuleValidationForm;
+use Yii\Widget\Tests\Support\RuleHtmlAttributesForm;
 use Yii\Widget\Tests\Support\TestForm;
 use Yii\Widget\Tests\Support\TestTrait;
 use Yiisoft\Definitions\Exception\CircularReferenceException;
@@ -217,15 +217,15 @@ final class RenderTest extends TestCase
      * @throws NotFoundException
      * @throws NotInstantiableException
      */
-    public function testGetRuleOptionsAttribute(): void
+    public function testGetRuleHtmlAttributes(): void
     {
         Assert::equalsWithoutLE(
             <<<HTML
             <div>
-            <input id="rulevalidationform-string" name="RuleValidationForm[string]" type="text" required>
+            <input id="rulehtmlattributesform-string" name="RuleHtmlAttributesForm[string]" type="text" required>
             </div>
             HTML,
-            InputWidget::widget([new RuleValidationForm(), 'string'])->render(),
+            InputWidget::widget([new RuleHtmlAttributesForm(), 'string'])->render(),
         );
     }
 
