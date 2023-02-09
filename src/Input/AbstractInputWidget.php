@@ -64,7 +64,7 @@ abstract class AbstractInputWidget extends AbstractComponentWidget
      */
     public function getErrorsForAttribute(): string
     {
-        return implode("<br>", $this->formModel->getError($this->attribute));
+        return implode('<br>', $this->formModel->getError($this->attribute));
     }
 
     /**
