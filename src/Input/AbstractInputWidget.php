@@ -138,7 +138,10 @@ abstract class AbstractInputWidget extends AbstractComponentWidget
             $suffix = PHP_EOL . $suffix;
         }
 
-        $attributes = array_merge($attributes, $this->formModel->getRuleOptionsAttribute($this->attribute));
+        $attributes = array_merge(
+            $attributes,
+            $this->formModel->getRuleHtmlAttributes($this->formModel, $this->attribute),
+        );
 
         return strtr(
             $this->template,
