@@ -56,7 +56,7 @@ trait HasContainer
     /**
      * Returns container attribute value.
      */
-    protected function getContainerAttributes(): array
+    private function getContainerAttributes(): array
     {
         return $this->containerAttributes;
     }
