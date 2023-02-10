@@ -32,6 +32,9 @@ final class ImmutabilityTest extends TestCase
         $this->assertNotSame($inputWidget, $inputWidget->dirname('test'));
         $this->assertNotSame($inputWidget, $inputWidget->disabled());
         $this->assertNotSame($inputWidget, $inputWidget->form(''));
+        $this->assertNotSame($inputWidget, $inputWidget->groups([]));
+        $this->assertNotSame($inputWidget, $inputWidget->items([]));
+        $this->assertNotSame($inputWidget, $inputWidget->itemsAttributes([]));
         $this->assertNotSame($inputWidget, $inputWidget->max(''));
         $this->assertNotSame($inputWidget, $inputWidget->maxLength(0));
         $this->assertNotSame($inputWidget, $inputWidget->min(''));
@@ -40,6 +43,7 @@ final class ImmutabilityTest extends TestCase
         $this->assertNotSame($inputWidget, $inputWidget->pattern(''));
         $this->assertNotSame($inputWidget, $inputWidget->placeholder(''));
         $this->assertNotSame($inputWidget, $inputWidget->prefix(''));
+        $this->assertNotSame($inputWidget, $inputWidget->prompt('', ''));
         $this->assertNotSame($inputWidget, $inputWidget->readonly());
         $this->assertNotSame($inputWidget, $inputWidget->required());
         $this->assertNotSame($inputWidget, $inputWidget->rows(0));
