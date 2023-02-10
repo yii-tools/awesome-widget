@@ -25,6 +25,7 @@ final class ImmutabilityTest extends TestCase
         $this->assertNotSame($inputWidget, $inputWidget->ariaLabel(''));
         $this->assertNotSame($inputWidget, $inputWidget->autocomplete('on'));
         $this->assertNotSame($inputWidget, $inputWidget->charset(''));
+        $this->assertNotSame($inputWidget, $inputWidget->checked(false));
         $this->assertNotSame($inputWidget, $inputWidget->cols(0));
         $this->assertNotSame($inputWidget, $inputWidget->container(true));
         $this->assertNotSame($inputWidget, $inputWidget->containerAttributes([]));
