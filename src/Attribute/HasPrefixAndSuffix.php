@@ -11,8 +11,8 @@ use Stringable;
  */
 trait HasPrefixAndSuffix
 {
-    private string $prefix = '';
-    private string $suffix = '';
+    protected string $prefix = '';
+    protected string $suffix = '';
 
     /**
      * Return new instance with before html content.

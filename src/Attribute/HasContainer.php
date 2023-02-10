@@ -11,8 +11,8 @@ use Yii\Html\Helper\CssClass;
  */
 trait HasContainer
 {
-    private bool $container = true;
-    private array $containerAttributes = [];
+    protected bool $container = true;
+    protected array $containerAttributes = [];
 
     /**
      * Return new instance with container enabled or disabled.
@@ -56,7 +56,7 @@ trait HasContainer
     /**
      * Returns container attribute value.
      */
-    private function getContainerAttributes(): array
+    protected function getContainerAttributes(): array
     {
         return $this->containerAttributes;
     }
