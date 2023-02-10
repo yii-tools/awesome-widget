@@ -11,7 +11,7 @@ use Yii\Html\Tag;
  */
 trait HasPrompt
 {
-    private string $prompt = '';
+    protected string $prompt = '';
 
     /**
      * Returns a new instances with the prompt option can be used to define a string that will be displayed on the first
