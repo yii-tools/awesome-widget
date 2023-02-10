@@ -383,6 +383,26 @@ final class RenderTest extends TestCase
      * @throws NotFoundException
      * @throws NotInstantiableException
      */
+    public function testPrompt(): void
+    {
+        Assert::equalsWithoutLE(
+            <<<HTML
+            <div>
+            <select id="testform-array" name="TestForm[array]" type placeholder="array">
+            <option value="0">tests</option>
+            </select>
+            </div>
+            HTML,
+            InputWidget::widget([new TestForm(), 'array'])->prompt('tests', '0')->tag('select')->type('')->render(),
+        );
+    }
+
+    /**
+     * @throws CircularReferenceException
+     * @throws InvalidConfigException
+     * @throws NotFoundException
+     * @throws NotInstantiableException
+     */
     public function testReadonly(): void
     {
         Assert::equalsWithoutLE(
