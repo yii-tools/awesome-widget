@@ -75,7 +75,7 @@ final class InputWidget extends AbstractInputWidget
         $renderInput = $this->run($this->tag, $content, $type, $attributes);
 
         return match ($this->container) {
-            true => Tag::create('div', $renderInput, $this->getContainerAttributes()),
+            true => Tag::create('div', $renderInput, $this->containerAttributes),
             false => $renderInput,
         };
     }

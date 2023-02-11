@@ -52,12 +52,4 @@ trait HasContainer
 
         return $new;
     }
-
-    /**
-     * Returns container attribute value.
-     */
-    private function getContainerAttributes(): array
-    {
-        return $this->containerAttributes;
-    }
 }
