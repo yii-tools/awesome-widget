@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Tests\Support;
 
 use Yii\Html\Tag;
-use Yii\Widget\Input\AbstractInputWidget;
+use Yii\Widget\AbstractInputWidget;
 use Yii\Widget\Attribute;
 
 final class InputWidget extends AbstractInputWidget

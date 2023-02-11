@@ -2,13 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Yii\Widget\Input;
+namespace Yii\Widget;
 
 use Yii\FormModel\FormModelInterface;
 use Yii\Html\Helper\Utils;
 use Yii\Html\Tag;
-use Yii\Widget\Attribute;
-use Yii\Widget\Component\AbstractComponentWidget;
 use Yii\Widget\Exception\AttributeNotSet;
 
 use function implode;

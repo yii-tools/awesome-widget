@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Yii\Widget\Component;
+namespace Yii\Widget;
 
-use Yii\Widget\Attribute;
 use Yiisoft\Widget\Widget;
 
 /**

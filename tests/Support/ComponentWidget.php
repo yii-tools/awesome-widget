@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yii\Widget\Tests\Support;
 
 use Yii\Html\Tag;
-use Yii\Widget\Component\AbstractComponentWidget;
+use Yii\Widget\AbstractComponentWidget;
 
 final class ComponentWidget extends AbstractComponentWidget
 {
