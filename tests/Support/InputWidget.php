@@ -19,6 +19,7 @@ final class InputWidget extends AbstractInputWidget
     use Attribute\HasDirname;
     use Attribute\HasGroup;
     use Attribute\HasItems;
+    use Attribute\HasLabel;
     use Attribute\HasMax;
     use Attribute\HasMaxLength;
     use Attribute\HasMin;
