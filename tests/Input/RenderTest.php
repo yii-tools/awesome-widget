@@ -336,6 +336,66 @@ final class RenderTest extends TestCase
      * @throws NotFoundException
      * @throws NotInstantiableException
      */
+    public function testLabel(): void
+    {
+        Assert::equalsWithoutLE(
+            <<<HTML
+            <div>
+            <label>Test</label>
+            <input id="testform-string" name="TestForm[string]" type="text">
+            </div>
+            HTML,
+            InputWidget::widget([new TestForm(), 'string'])->label('Test')->render(),
+        );
+    }
+
+    /**
+     * @throws CircularReferenceException
+     * @throws InvalidConfigException
+     * @throws NotFoundException
+     * @throws NotInstantiableException
+     */
+    public function testLabelAttributes(): void
+    {
+        Assert::equalsWithoutLE(
+            <<<HTML
+            <div>
+            <label class="test-class">Test</label>
+            <input id="testform-string" name="TestForm[string]" type="text">
+            </div>
+            HTML,
+            InputWidget::widget([new TestForm(), 'string'])
+                ->label('Test')
+                ->labelAttributes(['class' => 'test-class'])
+                ->render(),
+        );
+    }
+
+    /**
+     * @throws CircularReferenceException
+     * @throws InvalidConfigException
+     * @throws NotFoundException
+     * @throws NotInstantiableException
+     */
+    public function testLabelClass(): void
+    {
+        Assert::equalsWithoutLE(
+            <<<HTML
+            <div>
+            <label class="test-class">Test</label>
+            <input id="testform-string" name="TestForm[string]" type="text">
+            </div>
+            HTML,
+            InputWidget::widget([new TestForm(), 'string'])->label('Test')->labelClass('test-class')->render(),
+        );
+    }
+
+    /**
+     * @throws CircularReferenceException
+     * @throws InvalidConfigException
+     * @throws NotFoundException
+     * @throws NotInstantiableException
+     */
     public function testPrefix(): void
     {
         Assert::equalsWithoutLE(
