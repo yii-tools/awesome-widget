@@ -11,7 +11,7 @@ use Yii\Html\Helper\CssClass;
  */
 trait HasLabel
 {
-    protected string $label = '';
+    protected string|null $label = '';
     protected array $labelAttributes = [];
 
     /**
@@ -49,6 +49,17 @@ trait HasLabel
     {
         $new = clone $this;
         CssClass::add($new->labelAttributes, $value);
+
+        return $new;
+    }
+
+    /**
+     * Returns a new instance specifying whether the label not to be displayed.
+     */
+    public function notLabel(): static
+    {
+        $new = clone $this;
+        $new->label = null;
 
         return $new;
     }

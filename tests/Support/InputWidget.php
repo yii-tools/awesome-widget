@@ -74,7 +74,7 @@ final class InputWidget extends AbstractInputWidget
             $content .= PHP_EOL . $this->prompt . PHP_EOL;
         }
 
-        if ($this->label !== '') {
+        if ($this->label !== null && $this->label !== '') {
             $label = Tag::create('label', $this->label, $this->labelAttributes) . PHP_EOL;
         }
 
