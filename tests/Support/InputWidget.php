@@ -19,6 +19,7 @@ final class InputWidget extends AbstractInputWidget
     use Attribute\HasDirname;
     use Attribute\HasGroup;
     use Attribute\HasItems;
+    use Attribute\HasLabel;
     use Attribute\HasMax;
     use Attribute\HasMaxLength;
     use Attribute\HasMin;
@@ -52,6 +53,7 @@ final class InputWidget extends AbstractInputWidget
         $attributes = $this->attributes;
         $content = '';
         $type = 'text';
+        $label = '';
 
         if ($this->getPlaceholder() !== '') {
             $attributes['placeholder'] = $this->getPlaceholder();
@@ -72,7 +74,11 @@ final class InputWidget extends AbstractInputWidget
             $content .= PHP_EOL . $this->prompt . PHP_EOL;
         }
 
-        $renderInput = $this->run($this->tag, $content, $type, $attributes);
+        if ($this->label !== '') {
+            $label = Tag::create('label', $this->label, $this->labelAttributes) . PHP_EOL;
+        }
+
+        $renderInput = $label . $this->run($this->tag, $content, $type, $attributes);
 
         return match ($this->container) {
             true => Tag::create('div', $renderInput, $this->containerAttributes),
