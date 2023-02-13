@@ -396,6 +396,24 @@ final class RenderTest extends TestCase
      * @throws NotFoundException
      * @throws NotInstantiableException
      */
+    public function testNotLabel(): void
+    {
+        Assert::equalsWithoutLE(
+            <<<HTML
+            <div>
+            <input id="testform-string" name="TestForm[string]" type="text">
+            </div>
+            HTML,
+            InputWidget::widget([new TestForm(), 'string'])->label('Test')->notLabel()->render(),
+        );
+    }
+
+    /**
+     * @throws CircularReferenceException
+     * @throws InvalidConfigException
+     * @throws NotFoundException
+     * @throws NotInstantiableException
+     */
     public function testPrefix(): void
     {
         Assert::equalsWithoutLE(
