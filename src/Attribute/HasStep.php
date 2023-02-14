@@ -14,9 +14,9 @@ trait HasStep
     /**
      * Returns a new instances specifying the value granularity of the element’s value.
      *
-     * @param float|int|string $value The value granularity of the element’s value.
+     * @param int|string $value The value granularity of the element’s value.
      */
-    public function step(int|float|string $value): static
+    public function step(int|string $value): static
     {
         if (!is_numeric($value)) {
             throw new InvalidArgumentException('The value must be a number.');
