@@ -48,7 +48,7 @@ final class InputWidget extends AbstractInputWidget
         return $new;
     }
 
-    public function render(): string
+    protected function run(): string
     {
         $attributes = $this->attributes;
         $content = '';
@@ -78,7 +78,7 @@ final class InputWidget extends AbstractInputWidget
             $label = Tag::create('label', $this->label, $this->labelAttributes) . PHP_EOL;
         }
 
-        $renderInput = $label . $this->run($this->tag, $content, $type, $attributes);
+        $renderInput = $label . $this->renderInput($this->tag, $content, $type, $attributes);
 
         return match ($this->container) {
             true => Tag::create('div', $renderInput, $this->containerAttributes),

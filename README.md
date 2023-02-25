@@ -15,39 +15,19 @@ The minimun version of PHP required by this package is PHP 8.1.
 
 For install this package, you need [composer](https://getcomposer.org/).
 
-## Checking dependencies
-
-This package uses [composer-require-checker](https://github.com/maglnet/ComposerRequireChecker) to check if all dependencies are correctly defined in `composer.json`.
-
-To run the checker, execute the following command:
+## Install
 
 ```shell
-composer run check-dependencies
+composer require yii-tools/awesome-widget
 ```
 
-## Mutation testing
+## Usage
 
-Mutation testing is checked with [Infection](https://infection.github.io/). To run it:
-
-```shell
-composer run mutation
-```
-
-## Static analysis
-
-The code is statically analyzed with [Psalm](https://psalm.dev/). To run static analysis:
-
-```shell
-composer run psalm
-```
+For use this package, read the [docs](/docs/widget.md).
 
 ## Testing
 
-The code is tested with [PHPUnit](https://phpunit.de/). To run tests:
-
-```
-composer run test
-```
+For testing this package, read the [docs](/docs/testing.md).
 
 ## CI status
 
@@ -58,10 +38,10 @@ composer run test
 [![type-coverage](https://shepherd.dev/github/yii-tools/awesome-widget/coverage.svg)](https://shepherd.dev/github/yii-tools/awesome-widget)
 [![StyleCI](https://github.styleci.io/repos/597381615/shield?branch=main)](https://github.styleci.io/repos/597381615?branch=main)
 
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
 ## Our social networks
 
 [![Twitter](https://img.shields.io/badge/twitter-follow-1DA1F2?logo=twitter&logoColor=1DA1F2&labelColor=555555?style=flat)](https://twitter.com/Terabytesoftw)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
