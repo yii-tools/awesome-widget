@@ -7,7 +7,7 @@ namespace Forge\Widget\Tests\Stubs;
 use Yii\Html\Helper\Attributes;
 use Yii\Widget\AbstractWidget;
 
-final class WidgetConstructor extends AbstractWidget
+final class ConstructorWidget extends AbstractWidget
 {
     public function __construct(private Attributes $attributesHelper)
     {
