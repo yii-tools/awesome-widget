@@ -7,15 +7,12 @@ namespace Yii\Widget\Tests\Input;
 use PHPUnit\Framework\TestCase;
 use Yii\Widget\Tests\Support\InputWidget;
 use Yii\Widget\Tests\Support\TestForm;
-use Yii\Widget\Tests\Support\TestTrait;
 
 /**
  * @psalm-suppress PropertyNotSetInConstructor
  */
 final class ImmutabilityTest extends TestCase
 {
-    use TestTrait;
-
     public function testImmutability(): void
     {
         $inputWidget = InputWidget::widget([new TestForm(), 'string']);

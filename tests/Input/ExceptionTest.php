@@ -9,7 +9,6 @@ use PHPUnit\Framework\TestCase;
 use Yii\Widget\Exception\AttributeNotSet;
 use Yii\Widget\Tests\Support\InputWidget;
 use Yii\Widget\Tests\Support\TestForm;
-use Yii\Widget\Tests\Support\TestTrait;
 use Yiisoft\Definitions\Exception\CircularReferenceException;
 use Yiisoft\Definitions\Exception\InvalidConfigException;
 use Yiisoft\Definitions\Exception\NotInstantiableException;
@@ -20,8 +19,6 @@ use Yiisoft\Factory\NotFoundException;
  */
 final class ExceptionTest extends TestCase
 {
-    use TestTrait;
-
     /**
      * @throws CircularReferenceException
      * @throws InvalidConfigException
