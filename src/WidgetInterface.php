@@ -42,5 +42,5 @@ interface WidgetInterface extends Stringable
      * @param array $construct The constructor arguments for the widget.
      * @param array $definitions The configuration array for factory.
      */
-    public static function widget(array $construct = [], array $definitions = []): WidgetInterface;
+    public static function widget(array $construct = [], array $definitions = []): self;
 }
