@@ -1,4 +1,4 @@
-## Widgets
+# Widgets
 
 Widgets are reusable building blocks used in views to create complex and configurable user interface elements in an object-oriented fashion. For example, a date picker widget may generate a fancy date picker that allows users to pick a date as their input.
 
