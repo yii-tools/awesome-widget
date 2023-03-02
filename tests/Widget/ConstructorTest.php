@@ -6,7 +6,7 @@ namespace Yii\Widget\Tests\Widget;
 
 use PHPUnit\Framework\TestCase;
 use Yii\Html\Helper\Attributes;
-use Yii\Widget\Tests\Support\Widget;
+use Yii\Widget\Tests\Support\Widget\Widget;
 
 /**
  * @psalm-suppress PropertyNotSetInConstructor

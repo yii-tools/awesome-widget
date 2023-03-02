@@ -6,8 +6,8 @@ namespace Yii\Widget\Tests\Widget;
 
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
-use Yii\Widget\Tests\Support\InputWidget;
-use Yii\Widget\Tests\Support\Widget;
+use Yii\Widget\Tests\Support\Widget\InputWidget;
+use Yii\Widget\Tests\Support\Widget\Widget;
 
 /**
  * @psalm-suppress PropertyNotSetInConstructor
@@ -32,7 +32,7 @@ final class BeginEndTest extends TestCase
 
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage(
-            'Unexpected Yii\Widget\Tests\Support\Widget::end() call. A matching begin() is not found.'
+            'Unexpected Yii\Widget\Tests\Support\Widget\Widget::end() call. A matching begin() is not found.'
         );
 
         $widget::end();
@@ -45,7 +45,7 @@ final class BeginEndTest extends TestCase
     {
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage(
-            'Expecting end() of Yii\Widget\Tests\Support\Widget found Yii\Widget\Tests\Support\InputWidget.'
+            'Expecting end() of Yii\Widget\Tests\Support\Widget\Widget found Yii\Widget\Tests\Support\Widget\InputWidget.'
         );
 
         Widget::widget()->begin();

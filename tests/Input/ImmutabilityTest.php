@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Yii\Widget\Tests\Input;
 
 use PHPUnit\Framework\TestCase;
-use Yii\Widget\Tests\Support\InputWidget;
-use Yii\Widget\Tests\Support\TestForm;
+use Yii\Widget\Tests\Support\Form\TestForm;
+use Yii\Widget\Tests\Support\Widget\InputWidget;
 
 /**
  * @psalm-suppress PropertyNotSetInConstructor

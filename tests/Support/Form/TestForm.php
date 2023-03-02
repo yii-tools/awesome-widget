@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yii\Widget\Tests\Support;
+namespace Yii\Widget\Tests\Support\Form;
 
 use Yii\FormModel\AbstractFormModel;
 
