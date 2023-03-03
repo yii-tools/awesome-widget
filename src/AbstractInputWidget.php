@@ -16,15 +16,22 @@ use function implode;
  *
  * @link https://www.w3.org/TR/2012/WD-html-markup-20120329/input.html
  */
-abstract class AbstractInputWidget extends AbstractComponentWidget
+abstract class AbstractInputWidget extends AbstractWidget
 {
+    use Attribute\CanBeAutofocus;
     use Attribute\CanBeDisabled;
     use Attribute\CanBeReadonly;
     use Attribute\CanBeRequired;
     use Attribute\HasAriaDescribedBy;
     use Attribute\HasAriaLabel;
+    use Attribute\HasClass;
     use Attribute\HasForm;
+    use Attribute\HasId;
+    use Attribute\HasName;
     use Attribute\HasPrefixAndSuffix;
+    use Attribute\HasTabindex;
+    use Attribute\HasTitle;
+    use Attribute\HasValue;
 
     private string $charset = 'UTF-8';
     private string $template = '{prefix}{input}{suffix}';
@@ -124,7 +131,7 @@ abstract class AbstractInputWidget extends AbstractComponentWidget
         return $this->formModel->getAttributeValue($this->attribute);
     }
 
-    protected function run(string $tag, string $content, string|null $type, array $attributes): string
+    protected function renderInput(string $tag, string $content, string|null $type, array $attributes): string
     {
         $attributes['type'] = $type;
         $prefix = $this->prefix;

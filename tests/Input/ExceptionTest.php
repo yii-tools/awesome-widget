@@ -7,9 +7,8 @@ namespace Yii\Widget\Tests\Input;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use Yii\Widget\Exception\AttributeNotSet;
-use Yii\Widget\Tests\Support\InputWidget;
-use Yii\Widget\Tests\Support\TestForm;
-use Yii\Widget\Tests\Support\TestTrait;
+use Yii\Widget\Tests\Support\Form\TestForm;
+use Yii\Widget\Tests\Support\Widget\InputWidget;
 use Yiisoft\Definitions\Exception\CircularReferenceException;
 use Yiisoft\Definitions\Exception\InvalidConfigException;
 use Yiisoft\Definitions\Exception\NotInstantiableException;
@@ -20,8 +19,6 @@ use Yiisoft\Factory\NotFoundException;
  */
 final class ExceptionTest extends TestCase
 {
-    use TestTrait;
-
     /**
      * @throws CircularReferenceException
      * @throws InvalidConfigException

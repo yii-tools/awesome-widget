@@ -5,17 +5,14 @@ declare(strict_types=1);
 namespace Yii\Widget\Tests\Input;
 
 use PHPUnit\Framework\TestCase;
-use Yii\Widget\Tests\Support\InputWidget;
-use Yii\Widget\Tests\Support\TestForm;
-use Yii\Widget\Tests\Support\TestTrait;
+use Yii\Widget\Tests\Support\Form\TestForm;
+use Yii\Widget\Tests\Support\Widget\InputWidget;
 
 /**
  * @psalm-suppress PropertyNotSetInConstructor
  */
 final class ImmutabilityTest extends TestCase
 {
-    use TestTrait;
-
     public function testImmutability(): void
     {
         $inputWidget = InputWidget::widget([new TestForm(), 'string']);
@@ -23,9 +20,12 @@ final class ImmutabilityTest extends TestCase
         $this->assertNotSame($inputWidget, $inputWidget->accept(''));
         $this->assertNotSame($inputWidget, $inputWidget->ariaDescribedBy(''));
         $this->assertNotSame($inputWidget, $inputWidget->ariaLabel(''));
+        $this->assertNotSame($inputWidget, $inputWidget->attributes([]));
         $this->assertNotSame($inputWidget, $inputWidget->autocomplete('on'));
+        $this->assertNotSame($inputWidget, $inputWidget->autofocus());
         $this->assertNotSame($inputWidget, $inputWidget->charset(''));
         $this->assertNotSame($inputWidget, $inputWidget->checked(false));
+        $this->assertNotSame($inputWidget, $inputWidget->class('class'));
         $this->assertNotSame($inputWidget, $inputWidget->cols(0));
         $this->assertNotSame($inputWidget, $inputWidget->container(true));
         $this->assertNotSame($inputWidget, $inputWidget->containerAttributes([]));
@@ -34,6 +34,7 @@ final class ImmutabilityTest extends TestCase
         $this->assertNotSame($inputWidget, $inputWidget->disabled());
         $this->assertNotSame($inputWidget, $inputWidget->form(''));
         $this->assertNotSame($inputWidget, $inputWidget->groups([]));
+        $this->assertNotSame($inputWidget, $inputWidget->id('test'));
         $this->assertNotSame($inputWidget, $inputWidget->items([]));
         $this->assertNotSame($inputWidget, $inputWidget->itemsAttributes([]));
         $this->assertNotSame($inputWidget, $inputWidget->label(''));
@@ -44,6 +45,7 @@ final class ImmutabilityTest extends TestCase
         $this->assertNotSame($inputWidget, $inputWidget->min(''));
         $this->assertNotSame($inputWidget, $inputWidget->minLength(0));
         $this->assertNotSame($inputWidget, $inputWidget->multiple());
+        $this->assertNotSame($inputWidget, $inputWidget->name(''));
         $this->assertNotSame($inputWidget, $inputWidget->notLabel());
         $this->assertNotSame($inputWidget, $inputWidget->pattern(''));
         $this->assertNotSame($inputWidget, $inputWidget->placeholder(''));
@@ -55,7 +57,10 @@ final class ImmutabilityTest extends TestCase
         $this->assertNotSame($inputWidget, $inputWidget->size(0));
         $this->assertNotSame($inputWidget, $inputWidget->step(0));
         $this->assertNotSame($inputWidget, $inputWidget->suffix(''));
+        $this->assertNotSame($inputWidget, $inputWidget->tabindex(0));
+        $this->assertNotSame($inputWidget, $inputWidget->title(''));
         $this->assertNotSame($inputWidget, $inputWidget->type(''));
+        $this->assertNotSame($inputWidget, $inputWidget->value(null));
         $this->assertNotSame($inputWidget, $inputWidget->wrap('soft'));
     }
 }
