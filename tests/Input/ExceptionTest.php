@@ -9,22 +9,12 @@ use PHPUnit\Framework\TestCase;
 use Yii\Widget\Exception\AttributeNotSet;
 use Yii\Widget\Tests\Support\Form\TestForm;
 use Yii\Widget\Tests\Support\Widget\InputWidget;
-use Yiisoft\Definitions\Exception\CircularReferenceException;
-use Yiisoft\Definitions\Exception\InvalidConfigException;
-use Yiisoft\Definitions\Exception\NotInstantiableException;
-use Yiisoft\Factory\NotFoundException;
 
 /**
  * @psalm-suppress PropertyNotSetInConstructor
  */
 final class ExceptionTest extends TestCase
 {
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testAutocomplete(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -33,12 +23,6 @@ final class ExceptionTest extends TestCase
         InputWidget::widget([new TestForm(), 'string'])->autocomplete('')->render();
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testDirname(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -47,12 +31,6 @@ final class ExceptionTest extends TestCase
         InputWidget::widget([new TestForm(), 'string'])->dirname('')->render();
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testGetAttributeNotSet(): void
     {
         $this->expectException(AttributeNotSet::class);
@@ -61,12 +39,6 @@ final class ExceptionTest extends TestCase
         InputWidget::widget([new TestForm(), '']);
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testGetAttributeNotExist(): void
     {
         $this->expectException(AttributeNotSet::class);
@@ -75,12 +47,6 @@ final class ExceptionTest extends TestCase
         InputWidget::widget([new TestForm(), 'noExist']);
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testStep(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -89,12 +55,6 @@ final class ExceptionTest extends TestCase
         InputWidget::widget([new TestForm(), 'string'])->step('x')->render();
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testWrap(): void
     {
         $this->expectException(InvalidArgumentException::class);
