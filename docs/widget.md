@@ -121,4 +121,3 @@ protected function afterRun(string $result): string
     return $result;
 }
 ```
-

@@ -10,22 +10,12 @@ use Yii\Support\Assert;
 use Yii\Widget\Tests\Support\Form\RuleHtmlAttributesForm;
 use Yii\Widget\Tests\Support\Form\TestForm;
 use Yii\Widget\Tests\Support\Widget\InputWidget;
-use Yiisoft\Definitions\Exception\CircularReferenceException;
-use Yiisoft\Definitions\Exception\InvalidConfigException;
-use Yiisoft\Definitions\Exception\NotInstantiableException;
-use Yiisoft\Factory\NotFoundException;
 
 /**
  * @psalm-suppress PropertyNotSetInConstructor
  */
 final class RenderTest extends TestCase
 {
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testAccept(): void
     {
         Assert::equalsWithoutLE(
@@ -38,12 +28,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testAutoFocus(): void
     {
         Assert::equalsWithoutLE(
@@ -56,12 +40,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testAttributes(): void
     {
         Assert::equalsWithoutLE(
@@ -85,12 +63,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testClass(): void
     {
         Assert::equalsWithoutLE(
@@ -103,12 +75,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testContainerClass(): void
     {
         Assert::equalsWithoutLE(
@@ -121,12 +87,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testDisabled(): void
     {
         Assert::equalsWithoutLE(
@@ -139,23 +99,11 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testGetAttribute(): void
     {
         $this->assertSame('string', InputWidget::widget([new TestForm(), 'string'])->getAttribute());
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testGetErrorsForAttribute(): void
     {
         $inputWidget = InputWidget::widget([new TestForm(), 'string']);
@@ -173,12 +121,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testGetErrorFirstForAttribute(): void
     {
         $inputWidget = InputWidget::widget([new TestForm(), 'string']);
@@ -190,35 +132,17 @@ final class RenderTest extends TestCase
         $this->assertSame('Error for string.', $inputWidget->getErrorFirstForAttribute());
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testGetFormModel(): void
     {
         $this->assertInstanceOf(TestForm::class, InputWidget::widget([new TestForm(), 'string'])->getFormModel());
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testGetId(): void
     {
         $this->assertSame('testform-string', InputWidget::widget([new TestForm(), 'string'])->getId());
         $this->assertSame('test-id', InputWidget::widget([new TestForm(), 'string'])->id('test-id')->getId());
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testGetPlaceholder(): void
     {
         Assert::equalsWithoutLE(
@@ -231,12 +155,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testGetRuleHtmlAttributes(): void
     {
         Assert::equalsWithoutLE(
@@ -249,12 +167,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testGetValue(): void
     {
         Assert::equalsWithoutLE(
@@ -267,12 +179,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testIsValidated(): void
     {
         $inputWidget = InputWidget::widget([new TestForm(), 'string']);
@@ -290,12 +196,6 @@ final class RenderTest extends TestCase
         $this->assertFalse($inputWidget->isValidated());
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testHasError(): void
     {
         $inputWidget = InputWidget::widget([new TestForm(), 'string']);
@@ -309,12 +209,6 @@ final class RenderTest extends TestCase
         $this->assertTrue($inputWidget->hasError());
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testMultiple(): void
     {
         Assert::equalsWithoutLE(
@@ -327,12 +221,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testLabel(): void
     {
         Assert::equalsWithoutLE(
@@ -346,12 +234,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testLabelAttributes(): void
     {
         Assert::equalsWithoutLE(
@@ -368,12 +250,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testLabelClass(): void
     {
         Assert::equalsWithoutLE(
@@ -387,12 +263,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testNotLabel(): void
     {
         Assert::equalsWithoutLE(
@@ -405,12 +275,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testPrefix(): void
     {
         Assert::equalsWithoutLE(
@@ -424,12 +288,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testPrefixWithStringable(): void
     {
         Assert::equalsWithoutLE(
@@ -452,12 +310,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testPrompt(): void
     {
         Assert::equalsWithoutLE(
@@ -472,12 +324,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testReadonly(): void
     {
         Assert::equalsWithoutLE(
@@ -490,12 +336,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testRequired(): void
     {
         Assert::equalsWithoutLE(
@@ -508,12 +348,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testRender(): void
     {
         Assert::equalsWithoutLE(
@@ -526,12 +360,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testSuffix(): void
     {
         Assert::equalsWithoutLE(
@@ -545,12 +373,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testSuffixWithStringable(): void
     {
         Assert::equalsWithoutLE(
@@ -571,12 +393,6 @@ final class RenderTest extends TestCase
         );
     }
 
-    /**
-     * @throws CircularReferenceException
-     * @throws InvalidConfigException
-     * @throws NotFoundException
-     * @throws NotInstantiableException
-     */
     public function testWrap(): void
     {
         Assert::equalsWithoutLE(
@@ -585,7 +401,7 @@ final class RenderTest extends TestCase
             <input id="testform-string" name="TestForm[string]" type="text" wrap="hard">
             </div>
             HTML,
-            InputWidget::widget([new TestForm(), 'string'])->wrap('hard')->render(),
+            InputWidget::widget([new TestForm(), 'string'])->wrap()->render(),
         );
 
         Assert::equalsWithoutLE(

@@ -116,6 +116,19 @@ abstract class AbstractInputWidget extends AbstractWidget
     }
 
     /**
+     * Returns a new instance specifying the template of the widget.
+     *
+     * @param string $value The template of the widget.
+     */
+    public function template(string $value): static
+    {
+        $new = clone $this;
+        $new->template = $value;
+
+        return $new;
+    }
+
+    /**
      * @return string The placeholder of the widget.
      */
     protected function getPlaceholder(): string
