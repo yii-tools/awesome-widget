@@ -393,6 +393,18 @@ final class RenderTest extends TestCase
         );
     }
 
+    public function testTemplate(): void
+    {
+        Assert::equalsWithoutLE(
+            <<<HTML
+            <div>
+            <input id="testform-string" name="TestForm[string]" type="text">
+            </div>
+            HTML,
+            InputWidget::widget([new TestForm(), 'string'])->template('{input}')->render(),
+        );
+    }
+
     public function testWrap(): void
     {
         Assert::equalsWithoutLE(
