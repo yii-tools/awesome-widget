@@ -24,6 +24,7 @@ abstract class AbstractInputWidget extends AbstractWidget
     use Attribute\CanBeRequired;
     use Attribute\HasAriaDescribedBy;
     use Attribute\HasAriaLabel;
+    use Attribute\HasAttributes;
     use Attribute\HasClass;
     use Attribute\HasForm;
     use Attribute\HasId;
@@ -33,6 +34,7 @@ abstract class AbstractInputWidget extends AbstractWidget
     use Attribute\HasTitle;
     use Attribute\HasValue;
 
+    protected array $attributes = [];
     private string $charset = 'UTF-8';
     private string $template = '{prefix}{input}{suffix}';
 

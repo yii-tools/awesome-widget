@@ -6,9 +6,14 @@ namespace Yii\Widget\Tests\Support\Widget;
 
 use Yii\Html\Helper\Attributes;
 use Yii\Widget\AbstractWidget;
+use Yii\Widget\Attribute\HasAttributes;
 
 final class Widget extends AbstractWidget
 {
+    use HasAttributes;
+
+    protected array $attributes = [];
+
     public function id(string $value): self
     {
         $new = clone $this;

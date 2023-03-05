@@ -1,12 +1,16 @@
 # Widgets
 
-Widgets are reusable building blocks used in views to create complex and configurable user interface elements in an object-oriented fashion. For example, a date picker widget may generate a fancy date picker that allows users to pick a date as their input.
+Widgets are reusable building blocks used in view to create complex and configurable user interface elements in an object-oriented fashion.
+
+For example, a date picker widget may generate a fancy date picker that allows users to pick a date as their input.
 
 Widgets are mainly used in `views` to generate the needed `HTML` code that displays the corresponding user interface element. They may also be used in `forms` to generate the needed `HTML` code for displaying the corresponding form field.
 
 ## Using
 
-Widgets are primarily used in views. You can call the `Yii\Widget\AbstractWidget::widget()` method to use a widget in a view. The method has two parameters, the firts is the `constructor` parameters and the second is the `definitions` array. When you explicitly define the `constructor` parameters in the widget() method, the `constructor` in the `definitions` array will be ignored.
+Widgets are primarily used in view. You can call the `Yii\Widget\AbstractWidget::widget()` method to use a widget in a view.
+
+The method has two parameters, the firsts is the `constructor` parameters and the second is the `definitions` array. When you explicitly define the `constructor` parameters in the widget() method, the `constructor` in the `definitions` array will be ignored.
 
 In the view:
 
@@ -52,9 +56,11 @@ final class Widget extends AbstractWidget
 
 ## Capturing content
 
-Widgets may capture the content enclosed between the `begin()` and `end()` calls. This is useful when you want to generate a widget that contains some content. For example, you may want to generate a widget that mimic opening and closing HTML tags.
+Widgets may capture the content inside between the `begin()` and `end()` calls.
 
-For your widget to do this, you need override the `parent begin()` method and don't forget to call `parent::begin()`:
+This is useful when you want to generate a widget that has some content. For example, you may want to generate a widget that mimics opening and closing HTML tags.
+
+For your widget to do this, you need to override the `parent begin()` method and don't forget to call `parent::begin()`:
 
 ```php
 <?php
@@ -94,7 +100,9 @@ Then you can use the widget like the following:
 
 ## Before run
 
-The `beforeRun()` method is called right before running the widget. The return value of the method will determine whether the widget should continue to run. When overriding this method, make sure you call the `parent` implementation like the following:
+The `beforeRun()` method is called right before running the widget.
+
+The return value of the method will decide whether the widget should continue to run. When overriding this method, make sure you call the `parent` implementation like the following:
 
 ```php
 protected function beforeRun(): bool
