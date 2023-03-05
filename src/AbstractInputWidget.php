@@ -18,6 +18,7 @@ use function implode;
  */
 abstract class AbstractInputWidget extends AbstractWidget
 {
+    use Attribute\HasAttributes;
     use Attribute\CanBeAutofocus;
     use Attribute\CanBeDisabled;
     use Attribute\CanBeReadonly;
@@ -33,6 +34,7 @@ abstract class AbstractInputWidget extends AbstractWidget
     use Attribute\HasTitle;
     use Attribute\HasValue;
 
+    protected array $attributes = [];
     private string $charset = 'UTF-8';
     private string $template = '{prefix}{input}{suffix}';
 

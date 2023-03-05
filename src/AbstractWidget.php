@@ -16,13 +16,6 @@ use function get_class;
  */
 abstract class AbstractWidget extends Base\AbstractBaseWidget
 {
-    use Attribute\HasAttributes;
-
-    /**
-     * The attributes for the widget.
-     */
-    protected array $attributes = [];
-
     final public static function end(): string
     {
         $class = static::class;
