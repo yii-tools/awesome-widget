@@ -18,13 +18,13 @@ use function implode;
  */
 abstract class AbstractInputWidget extends AbstractWidget
 {
-    use Attribute\HasAttributes;
     use Attribute\CanBeAutofocus;
     use Attribute\CanBeDisabled;
     use Attribute\CanBeReadonly;
     use Attribute\CanBeRequired;
     use Attribute\HasAriaDescribedBy;
     use Attribute\HasAriaLabel;
+    use Attribute\HasAttributes;
     use Attribute\HasClass;
     use Attribute\HasForm;
     use Attribute\HasId;
