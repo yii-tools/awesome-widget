@@ -45,7 +45,7 @@ abstract class AbstractWidget extends Base\AbstractBaseWidget
 
     final public static function widget(array $construct = [], array $definitions = [], string $file = ''): static
     {
-        if ($file !== '' && !file_exists($file)) {
+        if ($file !== '' && !is_file($file)) {
             throw new RuntimeException("File $file does not exist.");
         }
 
@@ -58,7 +58,8 @@ abstract class AbstractWidget extends Base\AbstractBaseWidget
         $widget = $reflection->newInstanceArgs($construct);
 
         if ($definitions === [] && $file !== '') {
-            $file = require_once $file;
+            /** @psalm-var mixed $file */
+            $file = is_file($file) ? require_once $file : [];
             $definitions = is_array($file) ? $file : [];
         }
 
