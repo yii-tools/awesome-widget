@@ -17,9 +17,10 @@ Widgets are primarily used in view.
 You can call the `Yii\Widget\AbstractWidget::widget()` method to use a widget in a view.
 
 The method has three parameters:
-    - `constructor` array.
-    - `definitions` array methods and properties.
-    - `file` string name of config file. 
+
+- `constructor` array.
+- `definitions` array methods and properties.
+- `file` string name of config file. 
 
 The following code shows how to create a widget named `Widget` in a view.
 
