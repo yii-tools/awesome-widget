@@ -9,6 +9,8 @@ use ReflectionClass;
 
 use function array_pop;
 use function get_class;
+use function is_array;
+use function is_file;
 
 /**
  * AbstractWidget is the base class for widgets. A widget is a reusable component that can be used in different views.
@@ -59,7 +61,7 @@ abstract class AbstractWidget extends Base\AbstractBaseWidget
 
         if ($definitions === [] && $file !== '') {
             /** @psalm-var mixed $file */
-            $file = is_file($file) ? require_once $file : [];
+            $file = is_file($file) ? include $file : [];
             $definitions = is_array($file) ? $file : [];
         }
 
