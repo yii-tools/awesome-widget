@@ -40,8 +40,8 @@ That would generate the following code:
 <id="id-test" class="text-danger">
 ```
 
-When you explicitly define the `constructor` parameters in the widget() method, and the `__construct()` in the
-`definitions` array will be ignored.
+**Note:** *When you explicitly define the `constructor` parameters in the widget() method, and the `__construct()` in the*
+*`definitions` array will be ignored.*
 
 ### Definition array
 
@@ -70,7 +70,7 @@ That would generate the following code:
 
 ### File definitions config
 
-For usage file config definitions, you can't use a definition array, will be ignored the file config.
+For usage file config definitions, *you can't use a definition array, will be ignored the file config*.
 
 The following code shows how to create a widget named `Widget` in a view with the `file` config.
 
