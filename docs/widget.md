@@ -1,18 +1,28 @@
 # Widgets
 
-Widgets are reusable building blocks used in view to create complex and configurable user interface elements in an object-oriented fashion.
+Widgets are reusable building blocks used in view to create complex and configurable user interface elements in an
+object-oriented fashion.
 
 For example, a date picker widget may generate a fancy date picker that allows users to pick a date as their input.
 
-Widgets are mainly used in `views` to generate the needed `HTML` code that displays the corresponding user interface element. They may also be used in `forms` to generate the needed `HTML` code for displaying the corresponding form field.
+Widgets are mainly used in `views` to generate the needed `HTML` code that displays the corresponding user interface
+element.
 
-## Using
+They may also be used in `forms` to generate the needed `HTML` code for displaying the corresponding form field.
 
-Widgets are primarily used in view. You can call the `Yii\Widget\AbstractWidget::widget()` method to use a widget in a view.
+## Usage
 
-The method has two parameters, the firsts is the `constructor` parameters and the second is the `definitions` array. When you explicitly define the `constructor` parameters in the widget() method, the `constructor` in the `definitions` array will be ignored.
+Widgets are primarily used in view.
 
-In the view:
+You can call the `Yii\Widget\AbstractWidget::widget()` method to use a widget in a view.
+
+The method has three parameters:
+
+- `constructor` array.
+- `definitions` array methods and properties.
+- `file` string name of config file. 
+
+The following code shows how to create a widget named `Widget` in a view.
 
 ```php
 <?php
@@ -28,6 +38,67 @@ That would generate the following code:
 
 ```html
 <id="id-test" class="text-danger">
+```
+
+**Note:** *When you explicitly define the `constructor` parameters in the widget() method, and the `__construct()` in the*
+*`definitions` array will be ignored.*
+
+### Definition array
+
+The `definitions` array is used to define the widget's properties and methods.
+
+The array keys are the property names and the array values are the property values.
+
+The following code shows how to create a widget named `Widget` in a view with the `definitions` array.
+
+```php
+<?php
+
+declare(strict_types=1);
+
+use App\Widget\Widget;
+?>
+
+<?= Widget::widget(definitions: ['addAttribute()' => ['class', 'test-class']]) ?>
+```
+
+That would generate the following code:
+
+```html
+< class="test-class">
+```
+
+### File definitions config
+
+For usage file config definitions, *you can't use a definition array, will be ignored the file config*.
+
+The following code shows how to create a widget named `Widget` in a view with the `file` config.
+
+```php
+<?php
+
+declare(strict_types=1);
+
+return [
+    'addAttribute()' => ['class', 'test-class'],
+];
+```
+
+```php
+<?php
+
+declare(strict_types=1);
+
+use App\Widget\Widget;
+?>
+
+<?= Widget::widget(file: __DIR__ . '/widget.php') ?>
+```
+
+That would generate the following code:
+
+```html
+< class="test-class">
 ```
 
 ## Creating
@@ -67,7 +138,7 @@ For your widget to do this, you need to override the `parent begin()` method and
 
 declare(strict_types=1);
 
-namespace App\Widget;
+namespace App\Widget\Widget;
 
 use Yiisoft\Widget\AbstractWidget;
 

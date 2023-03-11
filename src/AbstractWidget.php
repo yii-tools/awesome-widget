@@ -43,8 +43,12 @@ abstract class AbstractWidget extends Base\AbstractBaseWidget
         return $this->afterRun($this->run());
     }
 
-    final public static function widget(array $construct = [], array $definitions = []): static
+    final public static function widget(array $construct = [], array $definitions = [], string $file = ''): static
     {
+        if ($file !== '' && !is_file($file)) {
+            throw new RuntimeException("File $file does not exist.");
+        }
+
         $reflection = new ReflectionClass(static::class);
 
         if ($construct !== []) {
@@ -52,6 +56,12 @@ abstract class AbstractWidget extends Base\AbstractBaseWidget
         }
 
         $widget = $reflection->newInstanceArgs($construct);
+
+        if ($definitions === [] && $file !== '') {
+            /** @psalm-var mixed $file */
+            $file = is_file($file) ? require_once $file : [];
+            $definitions = is_array($file) ? $file : [];
+        }
 
         return Factory\SimpleWidgetFactory::factory($definitions, $widget);
     }
