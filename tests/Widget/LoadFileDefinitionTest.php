@@ -13,7 +13,18 @@ use Yii\Widget\Tests\Support\Widget\Widget;
  */
 final class LoadFileDefinitionTest extends TestCase
 {
-    public function testExceptionDoesNotExist(): void
+    public function testDefinition(): void
+    {
+        $this->assertSame(
+            '<class="other-class">',
+            Widget::widget(
+                definitions: ['addAttribute()' => ['class', 'other-class']],
+                file: __DIR__ . '/../Support/config/widget_definition.php',
+            )->render(),
+        );
+    }
+
+    public function testException(): void
     {
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage('File /path/to/file does not exist.');
