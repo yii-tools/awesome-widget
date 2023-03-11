@@ -89,7 +89,7 @@ return [
 
 declare(strict_types=1);
 
-use App\Widget;
+use App\Widget\Widget;
 ?>
 
 <?= Widget::widget(file: __DIR__ . '/widget.php') ?>
@@ -138,7 +138,7 @@ For your widget to do this, you need to override the `parent begin()` method and
 
 declare(strict_types=1);
 
-namespace App\Widget;
+namespace App\Widget\Widget;
 
 use Yiisoft\Widget\AbstractWidget;
 
